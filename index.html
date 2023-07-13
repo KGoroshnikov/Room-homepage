@@ -15,8 +15,29 @@
 </head>
 <body>
   <div class="main-content">
+    <div class="mobile-header-container">
+      <div class="mobile-header">
+        <div onclick="closeMobileMenu()" class="close-mobile">
+          <img src="images/icon-close.svg" alt="close">
+        </div>
+        <div class="mobile-header-buttons">
+          <button>
+            home
+          </button>
+          <button>
+            shop
+          </button>
+          <button>
+            about
+          </button>
+          <button>
+            contact
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="header">
-      <img id="hamburger-menu" src="images/icon-hamburger.svg" alt="hamburger">
+      <img onclick="openMobileMenu()" id="hamburger-menu" src="images/icon-hamburger.svg" alt="hamburger">
       <img class="logo" src="images/logo.svg" alt="logo">
       <div class="header-btn">
         <button>
@@ -42,7 +63,6 @@
         </button>
         <div class="btn-underline"></div>
       </div>
-
     </div>
 
     <div class="block-up">

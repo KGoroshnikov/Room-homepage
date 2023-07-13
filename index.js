@@ -41,3 +41,56 @@ function changeImg_mobile(a){
   imgDescription.textContent = image_descriptions[currentImg_ID];
   currentImg.style.content = "url(" + preloadedImages_mobile[currentImg_ID].src + ")";
 }
+
+var mobHeaderContainer = document.getElementsByClassName("mobile-header-container")[0];
+var mobHeader = document.getElementsByClassName("mobile-header")[0];
+
+function openMobileMenu(){
+  mobHeaderContainer.style.display = "block";
+
+  const anim = mobHeaderContainer.animate(
+    [{backgroundColor: "rgba(0, 0, 0, .0)" }, { backgroundColor: "rgba(0, 0, 0, .7)" }],
+    {
+      fill: "forwards",
+      easing: "ease",
+      duration: 500,
+    }
+  );
+  anim.play();
+
+  const anim2 = mobHeader.animate(
+    [{transform: "scaleX(0)" }, {transform: "scaleX(1)" }],
+    {
+      fill: "forwards",
+      easing: "ease",
+      duration: 500,
+    }
+  );
+  anim2.play();
+}
+
+function closeMobileMenu(){
+  const anim = mobHeaderContainer.animate(
+    [{backgroundColor: "rgba(0, 0, 0, .7)" }, { backgroundColor: "rgba(0, 0, 0, .0)" }],
+    {
+      fill: "forwards",
+      easing: "ease",
+      duration: 500,
+    }
+  );
+  anim.play();
+
+  const anim2 = mobHeader.animate(
+    [{transform: "scaleX(1)" }, {transform: "scaleX(0)" }],
+    {
+      fill: "forwards",
+      easing: "ease",
+      duration: 500,
+    }
+  );
+  anim2.play();
+
+  setTimeout(() => {
+    mobHeaderContainer.style.display = "none";
+  }, 500);
+}
